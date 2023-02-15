@@ -11,10 +11,11 @@
     padding: 1.5em;
     gap: 1.5em;
     outline: 1px solid #ddd;
-    background-color: #eee;
+    background-color: var(--primary-color);
 }
 .nav .link{
     text-decoration: none;
+    color: #fff;
 }
 /* 
 .nav .first,

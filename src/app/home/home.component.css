@@ -3,6 +3,28 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.alertlog{
+    text-align: center;
+    width: 100%;
+    height: calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.alertlog div{
+    background-color: var(--primary-color);
+    padding: 2em;
+    line-height: 3em;
+    color: #fff;
+}
+.alertlog div h1{
+    margin: 0;
+    font-size: 3em;
+}
+.alertlog div p{
+    margin: 0;
+}
+
 .users{
     width: 100%;
     display: grid;
@@ -19,8 +41,10 @@
     justify-content: flex-start;
     width: 100%;
     border: 1px solid #ddd;
-    border-radius: 3px;
+    border-radius: 5px;
     overflow: hidden;
+    background-color: var(--primary-color);
+    color: #fff;
 }
 .users .user img{
     display: block;

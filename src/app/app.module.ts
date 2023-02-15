@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Components
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 // Services
 import { RequestsService } from './requests.service';
 import { UsersDataService } from './users-data.service';
+import { LoginService } from './login.service';
 
 const appRoutes : Routes = [
   {path: "", component: HomeComponent},
@@ -30,9 +32,14 @@ const appRoutes : Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [RequestsService, UsersDataService],
+  providers: [
+    RequestsService, 
+    UsersDataService,
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

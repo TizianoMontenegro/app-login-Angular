@@ -14,6 +14,6 @@ export class LoginComponent {
   login(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
-    this.loginService.login(email, password);
+    this.loginService.logIn(email, password);
   }
 }

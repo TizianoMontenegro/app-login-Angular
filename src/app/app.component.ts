@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import "firebase/compat/auth";
 })
 export class AppComponent implements OnInit {
 
-  constructor() {}
+  constructor(private loginService: LoginService) {}
 
   ngOnInit() {
     firebase.initializeApp({
@@ -17,4 +18,12 @@ export class AppComponent implements OnInit {
       authDomain: "app-logeate.firebaseapp.com"
     });
   }
+
+  isUserLoged() {
+    return this.loginService.isUserLoged();
+  };
+
+  logOut() {
+    this.loginService.logOut();
+  };
 }

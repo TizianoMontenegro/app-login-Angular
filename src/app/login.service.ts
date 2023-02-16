@@ -10,7 +10,7 @@ export class LoginService {
 
   constructor(private router: Router) { }
 
-  login(email: string, password: string) {
+  logIn(email: string, password: string) {
     firebase.auth().signInWithEmailAndPassword(email, password).then(res => {
       firebase.auth().currentUser?.getIdToken().then(token => {
         this.token = token;
@@ -21,5 +21,16 @@ export class LoginService {
 
   getIdToken() {
     return this.token;
+  };
+
+  isUserLoged() {
+    return this.token;
+  }
+
+  logOut() {
+    firebase.auth().signOut().then(()=>{
+      this.token = "";
+      this.router.navigate(["/"]);
+    });
   };
 }

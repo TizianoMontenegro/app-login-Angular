@@ -3,7 +3,8 @@
         <a class="link" routerLink="/">Home</a>
     </div>
     <div class="last">
-        <a class="link" routerLink="/login">Login</a>
+        <a class="link" routerLink="/login" *ngIf="!isUserLoged()">Login</a>
+        <a class="link" *ngIf="isUserLoged()" (click)="logOut()">Logout</a>
     </div>
 </nav>
 

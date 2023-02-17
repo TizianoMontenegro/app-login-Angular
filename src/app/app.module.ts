@@ -15,9 +15,13 @@ import { LoginComponent } from './login/login.component';
 import { RequestsService } from './requests.service';
 import { UsersDataService } from './users-data.service';
 import { LoginService } from './login.service';
+import { CookieService } from 'ngx-cookie-service';
+
+// Guards
+import { LoginGuard } from './login/login.guard';
 
 const appRoutes : Routes = [
-  {path: "", component: HomeComponent},
+  {path: "", component: HomeComponent, canActivate: [LoginGuard]},
   {path: "login", component: LoginComponent},
 ]
 
@@ -38,7 +42,9 @@ const appRoutes : Routes = [
   providers: [
     RequestsService, 
     UsersDataService,
-    LoginService
+    LoginService,
+    CookieService,
+    LoginGuard
   ],
   bootstrap: [AppComponent]
 })

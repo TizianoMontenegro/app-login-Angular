@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit{
   ngOnInit() {
     // this.users = this.usersDataService.users;
     this.usersDataService.getUsers().subscribe(users => {
-      // console.log(users);
       this.users = Object.values(users);
       this.usersDataService.setUsers(this.users);
     })
